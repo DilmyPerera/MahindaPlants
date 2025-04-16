@@ -53,6 +53,63 @@ This project aims to develop a fully functional e-commerce website tailored for 
 - Real-time inventory updates
 - Deadline within academic semester
 
+## Backend
+This is the **backend** of the Mahinda Plants E-commerce Website, developed as part of an academic project. The application is built using **Spring Boot** and provides a robust, secure, and scalable foundation for managing an online platform that sells plants, pots, and gardening supplies.
+
+---
+
+### 🚀 Features
+
+- 🌿 Product Management (plants, pots, gardening tools)
+- 👥 User Authentication (Spring Security)
+- 🛒 Shopping Cart and Order Processing
+- 💳 Secure Payment Integration (planned)
+- 📁 File Upload to AWS S3 for product images
+- 🗃️ MySQL Database with Spring Data JPA
+- 📦 RESTful API with Spring Web
+- 🧾 Input Validation with Validation I/O
+- 📊 Admin Dashboard Support (via API endpoints)
+
+---
+
+### 🔧 Tech Stack
+
+| Technology       | Description                                |
+|------------------|--------------------------------------------|
+| Java             | Main programming language                  |
+| Spring Boot      | Backend framework                          |
+| Spring Web       | For building RESTful web services          |
+| Spring Data JPA  | For data persistence                       |
+| Spring Security  | For secure authentication & authorization  |
+| MySQL            | Relational database for storing app data   |
+| Lombok           | Reduces boilerplate code                   |
+| AWS S3           | Cloud file storage for product images      |
+| Maven            | Dependency management                      |
+
+
+### 🛠️ How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/mahinda-plants-backend.git
+   ```
+2. Open in **Spring Tool Suite (STS)** or **IntelliJ IDEA**
+3. Configure your `application.properties` file with:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/your_db_name
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+
+   aws.accessKey=your_aws_access_key
+   aws.secretKey=your_aws_secret_key
+   aws.s3.bucketName=your_bucket_name
+   aws.region=your_aws_region
+   ```
+4. Run the application:
+   - Right-click `MainApplication.java` > Run As > Spring Boot App
+
+---
+
 ## 🔧 Future Improvements
 
 - Mobile app version of the platform
