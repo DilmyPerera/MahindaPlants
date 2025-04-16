@@ -70,8 +70,6 @@ This is the **backend** of the Mahinda Plants E-commerce Website, developed as p
 - 🧾 Input Validation with Validation I/O
 - 📊 Admin Dashboard Support (via API endpoints)
 
----
-
 ### 🔧 Tech Stack
 
 | Technology       | Description                                |
