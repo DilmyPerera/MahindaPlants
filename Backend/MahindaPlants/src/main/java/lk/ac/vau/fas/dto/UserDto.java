@@ -19,7 +19,7 @@ public class UserDto {
 	private Long id;
 	private String email;
 	private String name;
-	private String phonenumber;
+	private String phoneNumber;
 	private String password;
 	private String role;
 	private List<OrderItemDto> orderItemList;
