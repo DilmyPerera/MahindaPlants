@@ -54,7 +54,7 @@ This project aims to develop a fully functional e-commerce website tailored for 
 - Deadline within academic semester
 
 ## Backend
-This is the **backend** of the Mahinda Plants E-commerce Website, developed as part of an academic project. The application is built using **Spring Boot** and provides a robust, secure, and scalable foundation for managing an online platform that sells plants, pots, and gardening supplies.
+The **backend** of the Mahinda Plants E-commerce Website, developed as part of an academic project. The application is built using **Spring Boot** and provides a robust, secure, and scalable foundation for managing an online platform that sells plants, pots, and gardening supplies.
 
 ---
 
