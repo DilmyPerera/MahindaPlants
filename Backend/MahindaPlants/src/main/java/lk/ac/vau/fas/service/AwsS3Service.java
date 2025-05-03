@@ -19,7 +19,7 @@ import java.io.InputStream;
 @Slf4j
 public class AwsS3Service {
 
-    private final String bucketName = "mahindaPlantsPilot-ecommerce"; // change nameaws.s3.secrete
+    private final String bucketName = "mahindaplants"; 
 
     @Value("${aws.s3.access}")
     private String awsS3AccessKey;
@@ -34,7 +34,7 @@ public class AwsS3Service {
 
             AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
-                    .withRegion(Regions.US_EAST_2) // change region
+                    .withRegion(Regions.EU_NORTH_1) // eu-north-1
                     .build();
 
             InputStream inputStream = photo.getInputStream();
@@ -45,8 +45,8 @@ public class AwsS3Service {
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3FileName, inputStream, metadata);
             s3Client.putObject(putObjectRequest);
 
-            return "https://" + bucketName + ".s3.us-east-2.amazonaws.com/" + s3FileName; // s3.us-east-2.amazonaws.com/
-                                                                                          // change upon to state
+            return "https://" + bucketName + ".s3.eu-north-1.amazonaws.com/" + s3FileName; // s3.eu-north-1.amazonaws.com
+                                                                                        
 
         } catch (IOException e) {
             e.printStackTrace();
