@@ -106,6 +106,36 @@ The **backend** of the Mahinda Plants E-commerce Website, developed as part of a
 4. Run the application:
    - Right-click `MainApplication.java` > Run As > Spring Boot App
 
+### 🧪 API Testing with Postman
+
+We provide a ready-to-use **Postman Collection** to help you test the API endpoints quickly and efficiently.
+
+### 🔗 Postman Workspace
+
+👉 [Mahinda Plants Backend Postman Collection](https://app.getpostman.com/join-team?invite_code=c6e5a9e663f838757f592ef799d3d8e88b921aab8f593dcf465785fa0711a9bc&target_code=fc7b5244a93779166553ddb818fae08a)  
+
+### 📥 How to Use
+
+1. Ensure the backend server is running at `http://localhost:3000`
+2. Click the link above and open the collection in your Postman app.
+3. Import both the **collection** and **environment file** (if provided).
+4. Set up the following environment variables in Postman:
+   - `base_url` = `http://localhost:3000`
+   - `jwt_token` = *Set after logging in via `/api/auth/login`*
+5. Test available endpoints such as:
+   - `GET /api/products`
+   - `POST /api/auth/register`
+   - `POST /api/orders`
+   - etc.
+
+### 🔐 Authentication Notes
+
+- Some endpoints are secured and require a JWT token.
+- Use the login endpoint to retrieve a valid token and add it to the `Authorization` header like this:
+
+``` bash
+Authorization: Bearer <your_token>
+```
 ---
 
 ## 🔧 Future Improvements
