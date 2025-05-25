@@ -24,5 +24,13 @@ const cartReducer = (state, action) => {
             localStorage.setItem('cart', JSON.stringify(newCart));
             return { ...state, cart: newCart };
         }
+
+        case 'REMOVE_ITEM': {
+            const newCart = state.cart.filter(item => item.id !== action.payload.id);
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            return { ...state, cart: newCart };
+        }
+
+
     }
 }
