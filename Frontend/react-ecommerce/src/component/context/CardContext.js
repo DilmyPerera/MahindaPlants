@@ -6,3 +6,8 @@ const initialState = {
     cart: JSON.parse(localStorage.getItem('cart')) || [],
 }
 
+const cartReducer = (state, action) => {
+    switch (action.type) {
+
+    }
+}
