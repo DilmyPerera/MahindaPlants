@@ -72,5 +72,17 @@ export default class ApiService {
         return response.data;
     }
 
+    static async getProductById(productId) {
+        const response = await axios.get(`${this.BASE_URL}/product/get-by-product-id/${productId}`)
+        return response.data;
+    }
+
+    static async deleteProduct(productId) {
+        const response = await axios.delete(`${this.BASE_URL}/product/delete/${productId}`, {
+            headers: this.getHeader()
+        });
+        return response.data;
+    }
+
 
 }
