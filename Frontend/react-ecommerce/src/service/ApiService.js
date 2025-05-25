@@ -84,4 +84,12 @@ export default class ApiService {
         return response.data;
     }
 
+    // category API
+
+    static async createCategory(body) {
+        const response = await axios.post(`${this.BASE_URL}/category/create`, body, {
+            headers: this.getHeader()
+        })
+        return response.data;
+    }
 }
