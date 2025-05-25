@@ -109,4 +109,11 @@ export default class ApiService {
         })
         return response.data;
     }
+
+    static async deleteCategory(categoryId) {
+        const response = await axios.delete(`${this.BASE_URL}/category/delete/${categoryId}`, {
+            headers: this.getHeader()
+        })
+        return response.data;
+    }
 }
