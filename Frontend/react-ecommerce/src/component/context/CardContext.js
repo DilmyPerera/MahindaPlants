@@ -31,6 +31,14 @@ const cartReducer = (state, action) => {
             return { ...state, cart: newCart };
         }
 
-
+        case 'INCREMENT_ITEM': {
+            const newCart = state.cart.map(item =>
+                item.id === action.payload.id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            );
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            return { ...state, cart: newCart };
+        }
     }
 }
