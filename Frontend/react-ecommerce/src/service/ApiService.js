@@ -60,5 +60,13 @@ export default class ApiService {
         return response.data;
     }
 
+    static async searchProducts(searchValue) {
+        const response = await axios.get(`${this.BASE_URL}/product/search`, {
+            params: { searchValue }
+        });
+        return response.data;
+    }
+
+
 
 }
