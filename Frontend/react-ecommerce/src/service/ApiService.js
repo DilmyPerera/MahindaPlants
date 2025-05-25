@@ -157,4 +157,10 @@ export default class ApiService {
         return response.data;
     }
 
+    // Authentication Check
+
+    static logout() {
+        localStorage.removeItem('token')
+        localStorage.removeItem('role')
+    }
 }
