@@ -149,5 +149,12 @@ export default class ApiService {
     }
 
 
+    static async updateOrderitemStatus(orderItemId, status) {
+        const response = await axios.put(`${this.BASE_URL}/order/update-item-status/${orderItemId}`, {}, {
+            headers: this.getHeader(),
+            params: { status }
+        })
+        return response.data;
+    }
 
 }
