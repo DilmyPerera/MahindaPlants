@@ -132,5 +132,14 @@ export default class ApiService {
         return response.data;
     }
 
+    static async getOrderItemById(itemId) {
+        const response = await axios.get(`${this.BASE_URL}/order/filter`, {
+            headers: this.getHeader(),
+            params: { itemId }
+        })
+        return response.data;
+    }
+
+
 
 }
