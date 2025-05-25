@@ -116,4 +116,13 @@ export default class ApiService {
         })
         return response.data;
     }
+
+    // order API
+    static async createOrder(body) {
+        const response = await axios.post(`${this.BASE_URL}/order/create`, body, {
+            headers: this.getHeader()
+        })
+        return response.data;
+    }
+
 }
