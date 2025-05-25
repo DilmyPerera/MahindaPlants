@@ -92,4 +92,9 @@ export default class ApiService {
         })
         return response.data;
     }
+
+    static async getAllCategory() {
+        const response = await axios.get(`${this.BASE_URL}/category/get-all`)
+        return response.data;
+    }
 }
