@@ -45,5 +45,15 @@ export default class ApiService {
         return response.data;
     }
 
+    static async updateProduct(formData) {
+        const response = await axios.put(`${this.BASE_URL}/product/update`, formData, {
+            headers: {
+                ...this.getHeader(),
+                "Content-Type": "multipart/form-data"
+            }
+        });
+        return response.data;
+    }
+
 
 }
