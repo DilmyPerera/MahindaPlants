@@ -60,3 +60,21 @@ const cartReducer = (state, action) => {
             return state;
     }
 };
+
+
+export const CartProvider = ({ children }) => {
+
+    const [state, dispatch] = useReducer(cartReducer, initialState);
+
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(state.cart));
+    }, [state.cart]);
+
+    return (
+        <CartContext.Provider value={{ cart: state.cart, dispatch }}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
