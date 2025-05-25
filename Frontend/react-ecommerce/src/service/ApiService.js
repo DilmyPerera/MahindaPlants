@@ -32,4 +32,18 @@ export default class ApiService {
         });
         return response.data;
     }
+
+    // product endpoints
+
+    static async addProduct(formData) {
+        const response = await axios.post(`${this.BASE_URL}/product/create`, formData, {
+            headers: {
+                ...this.getHeader(),
+                "Content-Type": "multipart/form-data"
+            }
+        });
+        return response.data;
+    }
+
+
 }
