@@ -168,4 +168,9 @@ export default class ApiService {
         const token = localStorage.getItem('token')
         return !!token
     }
+
+    static isAdmin() {
+        const role = localStorage.getItem('role')
+        return role === 'ADMIN'
+    }
 }
