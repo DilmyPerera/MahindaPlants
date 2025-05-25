@@ -97,4 +97,9 @@ export default class ApiService {
         const response = await axios.get(`${this.BASE_URL}/category/get-all`)
         return response.data;
     }
+
+    static async getCategoryById(categoryId) {
+        const response = await axios.get(`${this.BASE_URL}/category/get-category-by-id/${categoryId}`)
+        return response.data;
+    }
 }
