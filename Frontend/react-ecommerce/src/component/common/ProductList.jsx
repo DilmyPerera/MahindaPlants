@@ -1,5 +1,7 @@
 import React from 'react';
+import '../../style/ProductList.css';
 import { useCart } from '../context/CardContext';
+import { Link } from 'react-router-dom';
 
 
 const ProductList = ({ products }) => {
@@ -22,3 +24,33 @@ const ProductList = ({ products }) => {
             dispatch({ type: 'REMOVE_ITEM', payload: product });
         }
     }
+
+    return (
+        <div className="product-list">
+            {products.map((product, index) => {
+                const cartItem = cart.find(item => item.id === product.id);
+                return (
+                    <div className="product-item" key={index}>
+                        <Link to={`/product/${product.id}`}>
+                            <img src={product.imageUrl} alt={product.name} className="product-image" />
+                            <h3>{product.name}</h3>
+                            <p>{product.description}</p>
+                            <span>${product.price.toFixed(2)}</span>
+                        </Link>
+                        {cartItem ? (
+                            <div className="quantity-controls">
+                                <button onClick={() => decrementItem(product)}> - </button>
+                                <span>{cartItem.quantity}</span>
+                                <button onClick={() => incrementItem(product)}> + </button>
+                            </div>
+                        ) : (
+                            <button onClick={() => addToCart(product)}>Add To Cart</button>
+                        )}
+                    </div>
+                )
+            })}
+        </div>
+    )
+};
+
+export default ProductList;
