@@ -40,4 +40,22 @@ const Home = () => {
         fetchProducts();
 
     }, [location.search, currentPage])
+
+    return (
+        <div className="home">
+            {error ? (
+                <p className="error-message">{error}</p>
+            ) : (
+                <div>
+                    <ProductList products={products} />
+                    <Pagination currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={(page) => setCurrentPage(page)} />
+                </div>
+            )}
+        </div>
+    )
+
+
 }
+
