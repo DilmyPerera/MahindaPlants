@@ -10,7 +10,7 @@ const Footer = () => {
                 <ul>
                     <NavLink to={"/"}>About Us</NavLink>
                     <NavLink to={"/"}>Contact Us</NavLink>
-                    <NavLink to={"/"}>Terms & Cnnditions</NavLink>
+                    <NavLink to={"/"}>Terms & Conditions</NavLink>
                     <NavLink to={"/"}>Privacy Policy</NavLink>
                     <NavLink to={"/"}>FAQs</NavLink>
                 </ul>
