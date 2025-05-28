@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../../style/navbar.css';
 import { NavLink, useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
-
+import logo from "../common/2.png";
 
 const Navbar = () => {
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                <NavLink to="/" > <img src="./1.png" alt="Mahinda Plants" /></NavLink>
+                <NavLink to="/" > <img src={logo} alt="Mahinda Plants" /></NavLink>
             </div>
             {/*SEARCH FORM*/}
             <form className="navbar-search" onSubmit={handleSearchSubmit}>
