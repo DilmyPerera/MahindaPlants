@@ -35,7 +35,7 @@ const ProductList = ({ products }) => {
                             <img src={product.imageUrl} alt={product.name} className="product-image" />
                             <h3>{product.name}</h3>
                             <p>{product.description}</p>
-                            <span>${product.price.toFixed(2)}</span>
+                            <span>Rs.{product.price.toFixed(2)}</span>
                         </Link>
                         {cartItem ? (
                             <div className="quantity-controls">
