@@ -1,0 +1,114 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    border: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1a4d1a 0%, #0f3d0f 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 0;
+    z-index: 1000;
+    box-shadow:
+        0 -8px 32px rgba(26, 77, 26, 0.15),
+        0 -4px 16px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            rgba(34, 139, 34, 0.1) 0%,
+            rgba(46, 125, 50, 0.1) 50%,
+            rgba(34, 139, 34, 0.1) 100%);
+    pointer-events: none;
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 2px;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.2), rgba(34, 139, 34, 0.2));
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #81c784;
+    text-shadow: 0 0 8px rgba(129, 199, 132, 0.3);
+    transform: translateY(-2px);
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+}
+
+.footer-info {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.footer-info p:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
