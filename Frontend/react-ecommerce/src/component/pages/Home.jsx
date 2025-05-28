@@ -4,6 +4,8 @@ import ProductList from "../common/ProductList";
 import Pagination from "../common/Pagination";
 import ApiService from "../../service/ApiService";
 
+import '../../style/home.css';
+
 const Home = () => {
     const location = useLocation();
     const [products, setProducts] = useState([]);
