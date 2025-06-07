@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useParams } from "react-router-dom";
 import ApiService from "../../service/ApiService";
-import '../../style/productDetailsPage.css';
+import '../../style/ProductDetailsPage.css';
 
 const ProductDetailsPage = () => {
     const { productId } = useParams();
