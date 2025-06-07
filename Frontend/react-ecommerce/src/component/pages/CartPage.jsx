@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import ApiService from "../../service/ApiService";
 
 const CartPage = () => {
     const { cart, dispatch } = useCart();
@@ -23,5 +24,14 @@ const CartPage = () => {
 
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-
+    const handleCheckout = async () => {
+        if (!ApiService.isAuthenticated()) {
+            setMessage("You need to login first before you can place an order");
+            setTimeout(() => {
+                setMessage('')
+                navigate("/login")
+            }, 3000);
+            return;
+        }
+    }
 }
