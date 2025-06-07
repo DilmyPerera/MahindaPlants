@@ -44,5 +44,18 @@ const CartPage = () => {
             items: orderItems,
         }
 
+        try {
+            const response = await ApiService.createOrder(orderRequest);
+            setMessage(response.message)
+
+            setTimeout(() => {
+                setMessage('')
+            }, 5000);
+
+            if (response.status === 200) {
+                dispatch({ type: 'CLEAR_CART' })
+            }
+
+        } 
     }
 }
