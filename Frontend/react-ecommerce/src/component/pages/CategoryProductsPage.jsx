@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ApiService from "../../service/ApiService";
 
 const CategoryProductsPage = () => {
     const { categoryId } = useParams();
@@ -12,5 +13,17 @@ const CategoryProductsPage = () => {
     useEffect(() => {
         fetchProducts();
     }, [categoryId, currentPage]);
+
+    const fetchProducts = async () => {
+        try {
+
+            const response = await ApiService.getAllProductsByCategoryId(categoryId);
+            const allProducts = response.productList || [];
+            setTotalPages(Math.ceil(allProducts.length / itemsPerPage));
+            setProducts(allProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+        } catch (error) {
+            setError(error.response?.data?.message || error.message || 'unable to fetch products by categoty id')
+        }
+    }
 
 }
