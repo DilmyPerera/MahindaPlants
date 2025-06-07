@@ -7,6 +7,7 @@ const LoginPage = () => {
         password: ''
     });
 
+    const [message, setMessage] = useState(null);
 
 
 }
