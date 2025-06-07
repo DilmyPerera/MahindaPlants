@@ -45,3 +45,5 @@ const CategoryProductsPage = () => {
     )
 
 }
+
+export default CategoryProductsPage;
