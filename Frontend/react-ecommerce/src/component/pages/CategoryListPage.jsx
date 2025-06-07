@@ -22,4 +22,9 @@ const CategoryListPage = () => {
         }
     }
 
+    const handleCategoryClick = (categoryId) => {
+        navigate(`/category/${categoryId}`);
+    }
+
+
 }
