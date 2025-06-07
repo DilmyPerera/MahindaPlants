@@ -20,4 +20,8 @@ const CartPage = () => {
             dispatch({ type: 'REMOVE_ITEM', payload: product });
         }
     }
+
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+
 }
