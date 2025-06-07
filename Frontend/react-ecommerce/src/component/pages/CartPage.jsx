@@ -87,7 +87,7 @@ const CartPage = () => {
                                         <span>{item.quantity}</span>
                                         <button onClick={() => incrementItem(item)}>+</button>
                                     </div>
-                                    <span>${item.price.toFixed()}</span>
+                                    <span>Rs. {item.price.toFixed()}</span>
                                 </div>
                             </li>
                         ))}
