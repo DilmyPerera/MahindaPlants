@@ -48,4 +48,10 @@ const ProductDetailsPage = () => {
 
         }
     }
+
+
+    if (!product) {
+        return <p>Loading product details ...</p>
+    }
+
 }
