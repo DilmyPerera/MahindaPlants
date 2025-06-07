@@ -30,4 +30,12 @@ const ProductDetailsPage = () => {
     }
 
 
+    const incrementItem = () => {
+        if (product) {
+            dispatch({ type: 'INCREMENT_ITEM', payload: product });
+
+        }
+    }
+
+
 }
