@@ -54,4 +54,8 @@ const ProductDetailsPage = () => {
         return <p>Loading product details ...</p>
     }
 
+
+    const cartItem = cart.find(item => item.id === product.id);
+
+
 }
