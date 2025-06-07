@@ -5,6 +5,7 @@ import Navbar from './component/common/Navbar';
 import Footer from './component/common/footer';
 import Home from './component/pages/Home';
 import ProductDetailsPage from './component/pages/ProductDetailsPage';
+import CategoryListPage from './component/pages/CategoryListPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path='/product/:productId' element={<ProductDetailsPage />} />
+          <Route path='/categories' element={<CategoryListPage />} />
         </Routes>
         <Footer />
       </CartProvider>
