@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const CategoryProductsPage = () => {
@@ -8,4 +8,9 @@ const CategoryProductsPage = () => {
     const [totalPages, setTotalPages] = useState(0);
     const [error, setError] = useState(null);
     const itemsPerPage = 8;
+
+    useEffect(() => {
+        fetchProducts();
+    }, [categoryId, currentPage]);
+
 }
