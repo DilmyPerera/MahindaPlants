@@ -1,0 +1,206 @@
+.category-list {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 254, 0.95) 100%);
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 16px 48px rgba(46, 125, 50, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.category-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784);
+    border-radius: 20px 20px 0 0;
+}
+
+.category-list::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(76, 175, 80, 0.03) 0%,
+            rgba(129, 199, 132, 0.03) 50%,
+            rgba(76, 175, 80, 0.03) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.category-list h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #1b5e20;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(27, 94, 32, 0.1);
+}
+
+.category-list h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 2px;
+}
+
+.category-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.category-list li {
+    flex: 1 1 calc(33.33% - 24px);
+    max-width: calc(33.33% - 24px);
+    min-width: 250px;
+}
+
+.category-list button {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.category-list button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.category-list button:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(46, 125, 50, 0.4);
+}
+
+.category-list button:hover::before {
+    left: 100%;
+}
+
+.category-list button:active {
+    transform: translateY(-1px);
+    transition: transform 0.1s ease;
+}
+
+.category-list button:focus {
+    outline: none;
+    box-shadow:
+        0 8px 28px rgba(46, 125, 50, 0.4),
+        0 0 0 4px rgba(46, 125, 50, 0.2);
+}
+
+.error-message {
+    color: #d32f2f;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(229, 57, 53, 0.1));
+    border: 2px solid rgba(244, 67, 54, 0.2);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 24px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 16px rgba(244, 67, 54, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 768px) {
+    .category-list {
+        margin: 0 1rem;
+        padding: 32px 24px;
+    }
+
+    .category-list h2 {
+        font-size: 2.2rem;
+        margin-bottom: 28px;
+    }
+
+    .category-list ul {
+        gap: 20px;
+    }
+
+    .category-list li {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        min-width: 200px;
+    }
+
+    .category-list button {
+        padding: 16px 18px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-list {
+        margin: 0 0.5rem;
+        padding: 24px 16px;
+    }
+
+    .category-list h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .category-list ul {
+        gap: 16px;
+    }
+
+    .category-list li {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .category-list button {
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+
+    .error-message {
+        font-size: 1em;
+        padding: 14px 20px;
+        margin-top: 20px;
+    }
+}
