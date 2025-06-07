@@ -56,6 +56,12 @@ const CartPage = () => {
                 dispatch({ type: 'CLEAR_CART' })
             }
 
-        } 
-    }
+        } catch (error) {
+            setMessage(error.response?.data?.message || error.message || 'Failed to place an order');
+            setTimeout(() => {
+                setMessage('')
+            }, 3000);
+
+        }
+    };
 }
