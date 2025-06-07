@@ -11,4 +11,13 @@ const CartPage = () => {
         dispatch({ type: 'INCREMENT_ITEM', payload: product });
     }
 
+    const decrementItem = (product) => {
+
+        const cartItem = cart.find(item => item.id === product.id);
+        if (cartItem && cartItem.quantity > 1) {
+            dispatch({ type: 'DECREMENT_ITEM', payload: product });
+        } else {
+            dispatch({ type: 'REMOVE_ITEM', payload: product });
+        }
+    }
 }
