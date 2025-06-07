@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ApiService from "../../service/ApiService";
 import ProductList from "../common/ProductList";
 import Pagination from "../common/Pagination";
+import '../../style/home.css';
 
 const CategoryProductsPage = () => {
     const { categoryId } = useParams();
