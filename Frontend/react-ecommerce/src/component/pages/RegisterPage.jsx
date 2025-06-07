@@ -18,4 +18,20 @@ const RegisterPage = () => {
         setFormData({ ...formData, [name]: value });
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await ApiService.registerUser(formData);
+            if (response.status === 200) {
+                setMessage("User Successfully Registerd");
+                setTimeout(() => {
+                    navigate("/login")
+                }, 4000)
+            }
+        } catch (error) {
+            setMessage(error.response?.data.message || error.message || "unable to register a user");
+        }
+    }
+
+
 }
