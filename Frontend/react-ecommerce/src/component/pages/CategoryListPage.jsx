@@ -46,3 +46,5 @@ const CategoryListPage = () => {
         </div>
     )
 }
+
+export default CategoryListPage;
