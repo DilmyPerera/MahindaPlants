@@ -33,5 +33,11 @@ const CartPage = () => {
             }, 3000);
             return;
         }
+
+        const orderItems = cart.map(item => ({
+            productId: item.id,
+            quantity: item.quantity
+        }));
+
     }
 }
