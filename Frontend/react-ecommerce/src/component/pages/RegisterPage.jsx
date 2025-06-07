@@ -8,4 +8,6 @@ const RegisterPage = () => {
         password: ''
     });
 
+    const [message, setMessage] = useState(null);
+
 }
