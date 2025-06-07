@@ -57,5 +57,23 @@ const ProductDetailsPage = () => {
 
     const cartItem = cart.find(item => item.id === product.id);
 
+    return (
+        <div className="product-detail">
+            <img src={product?.imageUrl} alt={product?.name} />
+            <h1>{product?.name}</h1>
+            <p>{product?.description}</p>
+            <span>${product.price.toFixed(2)}</span>
+            {cartItem ? (
+                <div className="quantity-controls">
+                    <button onClick={decrementItem}>-</button>
+                    <span>{cartItem.quantity}</span>
+                    <button onClick={incrementItem}>+</button>
+                </div>
+            ) : (
+                <button onClick={addToCart}>Add To Cart</button>
+            )}
+
+        </div>
+    )
 
 }
