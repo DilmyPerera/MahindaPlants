@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useParams } from "react-router-dom";
 import ApiService from "../../service/ApiService";
-
+import '../../style/productDetailsPage.css';
 
 const ProductDetailsPage = () => {
     const { productId } = useParams();
