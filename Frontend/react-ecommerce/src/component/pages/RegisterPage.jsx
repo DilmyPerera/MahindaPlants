@@ -33,5 +33,50 @@ const RegisterPage = () => {
         }
     }
 
+    return (
+        <div className="register-page">
+            <h2>Register</h2>
+            {message && <p className="message">{message}</p>}
+            <form onSubmit={handleSubmit}>
+                <label>Email: </label>
+                <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required />
+
+                <label>Name: </label>
+                <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required />
+
+
+                <label>Phone Number: </label>
+                <input
+                    type="text"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required />
+
+                <label>Password: </label>
+                <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required />
+
+                <button type="submit">Register</button>
+                <p className="register-link">
+                    Already have an account? <a href="/login">Login</a>
+                </p>
+            </form>
+        </div>
+    )
 
 }
