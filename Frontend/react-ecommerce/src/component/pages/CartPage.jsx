@@ -39,5 +39,10 @@ const CartPage = () => {
             quantity: item.quantity
         }));
 
+        const orderRequest = {
+            totalPrice,
+            items: orderItems,
+        }
+
     }
 }
