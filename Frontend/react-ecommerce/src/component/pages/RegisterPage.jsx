@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({
@@ -9,5 +10,7 @@ const RegisterPage = () => {
     });
 
     const [message, setMessage] = useState(null);
+
+    const navigate = useNavigate();
 
 }
