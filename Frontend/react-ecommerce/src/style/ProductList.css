@@ -76,7 +76,7 @@
     height: 65px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     font-weight: 500;
 }
