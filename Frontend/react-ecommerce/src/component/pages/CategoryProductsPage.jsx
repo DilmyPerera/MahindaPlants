@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ApiService from "../../service/ApiService";
+import ProductList from "../common/ProductList";
+import Pagination from "../common/Pagination";
 
 const CategoryProductsPage = () => {
     const { categoryId } = useParams();
@@ -25,5 +27,20 @@ const CategoryProductsPage = () => {
             setError(error.response?.data?.message || error.message || 'unable to fetch products by categoty id')
         }
     }
+
+    return (
+        <div className="home">
+            {error ? (
+                <p className="error-message">{error}</p>
+            ) : (
+                <div>
+                    <ProductList products={products} />
+                    <Pagination currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={(page) => setCurrentPage(page)} />
+                </div>
+            )}
+        </div>
+    )
 
 }
