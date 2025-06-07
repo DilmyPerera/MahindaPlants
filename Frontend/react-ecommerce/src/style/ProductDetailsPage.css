@@ -1,0 +1,191 @@
+.product-detail {
+    max-width: 420px;
+    margin: 10rem auto 10rem auto;
+    padding: 32px;
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 254, 0.95) 100%);
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow:
+        0 16px 48px rgba(46, 125, 50, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784);
+    border-radius: 20px 20px 0 0;
+}
+
+.product-detail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(76, 175, 80, 0.03) 0%,
+            rgba(129, 199, 132, 0.03) 50%,
+            rgba(76, 175, 80, 0.03) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.product-detail:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 60px rgba(46, 125, 50, 0.18),
+        0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(46, 125, 50, 0.25);
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.product-detail img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(46, 125, 50, 0.2);
+}
+
+.product-detail h1 {
+    text-align: center;
+    color: #1b5e20;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(27, 94, 32, 0.1);
+}
+
+.product-detail span {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2e7d32;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: rgba(46, 125, 50, 0.05);
+    border: 2px solid rgba(46, 125, 50, 0.1);
+}
+
+.product-detail button {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.35);
+    z-index: 1;
+}
+
+.product-detail button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.product-detail button:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(46, 125, 50, 0.45);
+}
+
+.product-detail button:hover::before {
+    left: 100%;
+}
+
+.product-detail button:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.product-detail button:focus {
+    outline: none;
+    box-shadow:
+        0 8px 28px rgba(46, 125, 50, 0.45),
+        0 0 0 4px rgba(46, 125, 50, 0.2);
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 768px) {
+    .product-detail {
+        max-width: 90%;
+        margin: 8rem auto;
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .product-detail h1 {
+        font-size: 1.8em;
+    }
+
+    .product-detail span {
+        font-size: 20px;
+    }
+
+    .product-detail button {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-detail {
+        margin: 6rem auto;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .product-detail h1 {
+        font-size: 1.6em;
+    }
+
+    .product-detail span {
+        font-size: 18px;
+    }
+}
