@@ -22,4 +22,12 @@ const ProductDetailsPage = () => {
             console.log(error.message || error)
         }
     }
+
+    const addToCart = () => {
+        if (product) {
+            dispatch({ type: 'ADD_ITEM', payload: product });
+        }
+    }
+
+
 }
