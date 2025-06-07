@@ -4,6 +4,7 @@ import { CartProvider } from './component/context/CardContext';
 import Navbar from './component/common/Navbar';
 import Footer from './component/common/footer';
 import Home from './component/pages/Home';
+import ProductDetailsPage from './component/pages/ProductDetailsPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path='/product/:productId' element={<ProductDetailsPage />} />
         </Routes>
         <Footer />
       </CartProvider>
