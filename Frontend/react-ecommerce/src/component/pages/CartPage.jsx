@@ -7,5 +7,8 @@ const CartPage = () => {
     const [message, setMessage] = useState(null);
     const navigate = useNavigate();
 
+    const incrementItem = (product) => {
+        dispatch({ type: 'INCREMENT_ITEM', payload: product });
+    }
 
 }
