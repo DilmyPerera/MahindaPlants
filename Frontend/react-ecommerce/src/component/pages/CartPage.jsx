@@ -64,4 +64,37 @@ const CartPage = () => {
 
         }
     };
+
+    return (
+        <div className="cart-page">
+            <h1>Cart</h1>
+            {message && <p className="response-message">{message}</p>}
+
+            {cart.length === 0 ? (
+                <p>Your cart is empty</p>
+            ) : (
+                <div>
+                    <ul>
+                        {cart.map(item => (
+                            <li key={item.id}>
+                                <img src={item.imageUrl} alt={item.name} />
+                                <div>
+                                    <h2>{item.name}</h2>
+                                    <p>{item.description}</p>
+                                    <div className="quantity-controls">
+                                        <button onClick={() => decrementItem(item)}>-</button>
+                                        <span>{item.quantity}</span>
+                                        <button onClick={() => incrementItem(item)}>+</button>
+                                    </div>
+                                    <span>${item.price.toFixed()}</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                    <h2>Total: Rs. {totalPrice.toFixed(2)}</h2>
+                    <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+                </div>
+            )}
+        </div>
+    )
 }
