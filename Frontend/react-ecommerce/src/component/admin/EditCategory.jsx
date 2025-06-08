@@ -25,6 +25,22 @@ const EditCategory = () => {
             }, 3000)
         }
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await ApiService.updateCategory(categoryId, { name });
+            if (response.status === 200) {
+                setMessage(response.message);
+                setTimeout(() => {
+                    setMessage('');
+                    navigate("/admin/categories")
+                }, 3000)
+            }
+        } catch (error) {
+            setMessage(error.response?.data?.message || error.message || "Failed to save a category")
+        }
+    }
 }
 
 export default EditCategory;
