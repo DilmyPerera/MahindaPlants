@@ -12,6 +12,7 @@ import CartPage from './component/pages/CartPage';
 import RegisterPage from './component/pages/RegisterPage';
 import LoginPage from './component/pages/LoginPage';
 import ProfilePage from './component/pages/ProfilePage';
+import AddressPage from './component/pages/AddressPage';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
 
           <Route path='/profile' element={<ProtectedRoute element={<ProfilePage />} />} />
+          <Route path='/add-address' element={<ProtectedRoute element={<AddressPage />} />} />
+
 
         </Routes>
         <Footer />
