@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ApiService from "../../service/ApiService";
+import '../../style/AddProductPage.css';
 
 const EditProductPage = () => {
     const { productId } = useParams();
