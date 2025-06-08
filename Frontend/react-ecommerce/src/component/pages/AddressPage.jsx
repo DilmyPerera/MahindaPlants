@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ApiService from "../../service/ApiService";
 
 const AddressPage = () => {
 
@@ -21,4 +22,15 @@ const AddressPage = () => {
             fetchUserInfo();
         }
     }, [location.pathname]);
+
+    const fetchUserInfo = async () => {
+        try {
+            const response = await ApiService.getLoggedInUserInfo();
+            if (response.user.address) {
+                setAddress(response.user.address)
+            }
+        } catch (error) {
+            setError(error.response?.data?.message || error.message || "unable to fetch user information")
+        }
+    };
 }
