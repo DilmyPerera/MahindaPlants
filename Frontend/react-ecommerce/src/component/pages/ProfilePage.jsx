@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ApiService from "../../service/ApiService";
 
 const ProfilePage = () => {
 
@@ -13,4 +14,14 @@ const ProfilePage = () => {
 
         fetchUserInfo();
     }, []);
+
+    const fetchUserInfo = async () => {
+
+        try {
+            const response = await ApiService.getLoggedInUserInfo();
+            setUserInfo(response.user);
+        } catch (error) {
+            setError(error.response?.data?.message || error.message || 'Unable to fetch user info');
+        }
+    }
 }
