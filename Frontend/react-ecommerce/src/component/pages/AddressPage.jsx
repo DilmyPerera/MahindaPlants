@@ -51,4 +51,10 @@ const AddressPage = () => {
             setError(error.response?.data?.message || error.message || "Failed to save/update address")
         }
     }
+
+    return (
+        <div>
+
+        </div>
+    );
 }
