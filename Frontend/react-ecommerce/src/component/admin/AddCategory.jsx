@@ -23,7 +23,20 @@ const AddCategory = () => {
         }
     }
 
+    return (
+        <div className="add-category-page">
+            {message && <p className="message">{message}</p>}
+            <form onSubmit={handleSubmit} className="category-form">
+                <h2>Add Category</h2>
+                <input type="text"
+                    placeholder="Category Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)} />
 
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    )
 }
 
 export default AddCategory;
