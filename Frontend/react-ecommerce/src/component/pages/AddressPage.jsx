@@ -74,6 +74,33 @@ const AddressPage = () => {
                         onChange={handleChange}
                         required />
                 </label>
+
+                <label>
+                    State:
+                    <input type="text"
+                        name="state"
+                        value={address.state}
+                        onChange={handleChange}
+                        required />
+                </label>
+
+                <label>
+                    Zip Code:
+                    <input type="text"
+                        name="zipcode"
+                        value={address.zipCode}
+                        onChange={handleChange}
+                        required />
+                </label>
+
+                <label>
+                    Country:
+                    <input type="text"
+                        name="country"
+                        value={address.country}
+                        onChange={handleChange}
+                        required />
+                </label>
             </form>
         </div>
     );
