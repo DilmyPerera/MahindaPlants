@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
 import Pagination from "../common/Pagination";
+import '../../style/AdminProductPage.css';
 
 const AdminProductPage = () => {
     const navigate = useNavigate();
