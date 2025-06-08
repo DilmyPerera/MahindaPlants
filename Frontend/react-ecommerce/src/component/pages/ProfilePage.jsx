@@ -28,6 +28,14 @@ const ProfilePage = () => {
         }
     }
 
+    if (!userInfo) {
+        return <div>Loading...</div>
+    }
+
+    const handleAddressClick = () => {
+        navigate(userInfo.address ? '/edit-address' : '/add-address');
+    }
+
     const orderItemList = userInfo.orderItemList || [];
 
     const totalPages = Math.ceil(orderItemList.length / itemsPerPage);
