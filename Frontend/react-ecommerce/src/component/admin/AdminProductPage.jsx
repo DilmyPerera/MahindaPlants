@@ -26,7 +26,20 @@ const AdminProductPage = () => {
         fetchProducts();
     }, [currentPage]);
 
-
+    const handleEdit = async (id) => {
+        navigate(`/admin/edit-product/${id}`)
+    }
+    const handleDelete = async (id) => {
+        const confirmed = window.confirm("Are your sure you want to delete this product? ")
+        if (confirmed) {
+            try {
+                await ApiService.deleteProduct(id);
+                fetchProducts();
+            } catch (error) {
+                setError(error.response?.data?.message || error.message || 'unable to delete product')
+            }
+        }
+    }
 
 }
 
