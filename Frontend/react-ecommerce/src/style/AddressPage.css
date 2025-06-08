@@ -1,0 +1,246 @@
+.address-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 254, 0.95) 100%);
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 16px 48px rgba(46, 125, 50, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.address-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784);
+    border-radius: 20px 20px 0 0;
+}
+
+.address-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(76, 175, 80, 0.03) 0%,
+            rgba(129, 199, 132, 0.03) 50%,
+            rgba(76, 175, 80, 0.03) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.address-page h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(27, 94, 32, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.address-page h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 2px;
+}
+
+.address-page form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.address-page label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2e7d32;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+}
+
+.address-page input {
+    padding: 16px;
+    margin-bottom: 24px;
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    width: calc(100% - 34px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 254, 0.9) 100%);
+    color: #37474f;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(46, 125, 50, 0.08);
+}
+
+.address-page input:focus {
+    outline: none;
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow:
+        0 4px 16px rgba(46, 125, 50, 0.15),
+        0 0 0 4px rgba(76, 175, 80, 0.1);
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(129, 199, 132, 0.05) 100%);
+}
+
+.address-page input:hover {
+    border-color: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.1);
+}
+
+.address-page button {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    padding: 16px 24px;
+    font-weight: 700;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 16px 0;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.address-page button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.address-page button:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(46, 125, 50, 0.4);
+}
+
+.address-page button:hover::before {
+    left: 100%;
+}
+
+.address-page button:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.address-page button:focus {
+    outline: none;
+    box-shadow:
+        0 12px 32px rgba(46, 125, 50, 0.4),
+        0 0 0 4px rgba(46, 125, 50, 0.2);
+}
+
+.error-message {
+    color: #c62828;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(229, 57, 53, 0.1));
+    border: 2px solid rgba(244, 67, 54, 0.2);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 16px rgba(244, 67, 54, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.error-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f44336, #e53935);
+    border-radius: 12px 12px 0 0;
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 768px) {
+    .address-page {
+        margin: 30px 1rem;
+        padding: 32px 24px;
+    }
+
+    .address-page h2 {
+        font-size: 2.2rem;
+        margin-bottom: 28px;
+    }
+
+    .address-page input {
+        padding: 14px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .address-page button {
+        padding: 14px 20px;
+        font-size: 1.1rem;
+        margin: 14px 0;
+    }
+
+    .error-message {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .address-page {
+        margin: 20px 0.5rem;
+        padding: 24px 16px;
+    }
+
+    .address-page h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .address-page input {
+        padding: 12px;
+        margin-bottom: 18px;
+        font-size: 0.95rem;
+    }
+
+    .address-page button {
+        padding: 12px 18px;
+        font-size: 1rem;
+        margin: 12px 0;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        padding: 12px 18px;
+        margin-bottom: 18px;
+    }
+}
