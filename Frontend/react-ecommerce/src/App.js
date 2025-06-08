@@ -20,6 +20,8 @@ import EditCategory from './component/admin/EditCategory';
 import AdminProductPage from './component/admin/AdminProductPage';
 import AddProductPage from './component/admin/AddProductPage';
 import EditProductPage from './component/admin/EditProductPage';
+import AdminOrdersPage from './component/admin/AdminOrdersPage';
+import AdminOrderDetailsPage from './component/admin/AdminOrderDetailsPage';
 
 function App() {
   return (
@@ -47,8 +49,8 @@ function App() {
           <Route path='/admin/add-product' element={<AdminRoute element={<AddProductPage />} />} />
           <Route path='/admin/edit-product/:productId' element={<AdminRoute element={<EditProductPage />} />} />
 
-
-
+          <Route path='/admin/orders' element={<AdminRoute element={<AdminOrdersPage />} />} />
+          <Route path='/admin/order-details/:itemId' element={<AdminRoute element={<AdminOrderDetailsPage />} />} />
 
 
         </Routes>
