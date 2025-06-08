@@ -44,6 +44,38 @@ const AddProductPage = () => {
             setMessage(error.response?.data?.message || error.message || 'unable to upload product')
         }
     }
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit} className="product-form">
+                <h2>Add Product</h2>
+                {message && <div className="message">{message}</div>}
+                <input type="file" onChange={handleImage} />
+                <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} >
+                    <option value="">Select Category</option>
+                    {categories.map((cat) => (
+                        <option value={cat.id} key={cat.id}>{cat.name}</option>
+                    ))}
+                </select>
+                <input type="text"
+                    placeholder="Product name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)} />
+
+                <textarea
+                    placeholder="Description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)} />
+
+                <input type="number"
+                    placeholder="price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)} />
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    )
 }
 
 export default AddProductPage;
