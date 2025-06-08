@@ -63,7 +63,7 @@ const EditProductPage = () => {
 
     return (
         <form onSubmit={handleSubmit} className="product-form">
-            <h2>Edit Produc</h2>
+            <h2>Edit Product</h2>
             {message && <div className="message">{message}</div>}
             <input type="file" onChange={handleImageChange} />
             {imageUrl && <img src={imageUrl} alt={name} />}
