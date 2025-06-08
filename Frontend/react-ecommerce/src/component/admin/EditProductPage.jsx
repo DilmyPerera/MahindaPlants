@@ -27,6 +27,12 @@ const EditProductPage = () => {
             })
         }
     }, [productId]);
+
+    const handleImageChange = (e) => {
+        setImage(e.target.files[0]);
+        setImageUrl(URL.createObjectURL(e.target.files[0]));
+    };
+
 }
 
 export default EditProductPage;
