@@ -30,6 +30,7 @@ function App() {
 
           <Route path='/profile' element={<ProtectedRoute element={<ProfilePage />} />} />
           <Route path='/add-address' element={<ProtectedRoute element={<AddressPage />} />} />
+          <Route path='/edit-address' element={<ProtectedRoute element={<AddressPage />} />} />
 
 
         </Routes>
