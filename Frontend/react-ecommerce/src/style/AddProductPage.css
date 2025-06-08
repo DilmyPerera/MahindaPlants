@@ -1,35 +1,332 @@
 .product-form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: auto;
-    margin-bottom: 250px;
+    width: min(90%, 700px);
+    margin: 50px auto 100px auto;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 254, 0.95) 100%);
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 16px 48px rgba(46, 125, 50, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.product-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784);
+    border-radius: 20px 20px 0 0;
+}
+
+.product-form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(76, 175, 80, 0.03) 0%,
+            rgba(129, 199, 132, 0.03) 50%,
+            rgba(76, 175, 80, 0.03) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .product-form input,
 .product-form select,
-.product-form textarea,
-.product-form button {
-    margin: 10x 0;
-    padding: 10px;
-    font-size: 16px;
+.product-form textarea {
+    margin: 12px 0;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 254, 0.9) 100%);
+    color: #37474f;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(46, 125, 50, 0.08);
+    outline: none;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-form input:focus,
+.product-form select:focus,
+.product-form textarea:focus {
+    border-color: #4caf50;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(129, 199, 132, 0.05) 100%);
+    box-shadow:
+        0 6px 20px rgba(46, 125, 50, 0.12),
+        0 0 0 4px rgba(76, 175, 80, 0.15);
+    transform: translateY(-2px);
+}
+
+.product-form input::placeholder,
+.product-form textarea::placeholder {
+    color: #90a4ae;
+    font-weight: 400;
+}
+
+.product-form input:hover,
+.product-form select:hover,
+.product-form textarea:hover {
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.1);
+}
+
+.product-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.product-form select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234caf50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 20px;
+    appearance: none;
+    padding-right: 50px;
 }
 
 .product-form button {
-    background-color: #f68b1e;
-    padding: 15px;
+    margin: 20px 0 12px 0;
+    padding: 18px 24px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
     border: none;
+    border-radius: 14px;
     cursor: pointer;
-    color: #fff;
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: inherit;
+    z-index: 1;
+}
+
+.product-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .product-form button:hover {
-    background-color: #b46d26;
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(46, 125, 50, 0.4);
+}
 
+.product-form button:hover::before {
+    left: 100%;
+}
+
+.product-form button:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.product-form button:focus {
+    outline: none;
+    box-shadow:
+        0 12px 32px rgba(46, 125, 50, 0.4),
+        0 0 0 4px rgba(46, 125, 50, 0.2);
 }
 
 .product-form img {
-    max-width: 100px;
-    margin: 10px 0;
+    max-width: 150px;
+    margin: 16px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(46, 125, 50, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.product-form img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(46, 125, 50, 0.2);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+/* Form sections and labels */
+.product-form label {
+    font-weight: 600;
+    color: #2e7d32;
+    margin: 16px 0 8px 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-form .form-row {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.product-form .form-row .form-group {
+    flex: 1;
+}
+
+/* File input styling */
+.product-form input[type="file"] {
+    padding: 12px 16px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(129, 199, 132, 0.05) 100%);
+    border: 2px dashed rgba(76, 175, 80, 0.3);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.product-form input[type="file"]:hover {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(129, 199, 132, 0.08) 100%);
+    border-color: rgba(76, 175, 80, 0.5);
+}
+
+.product-form input[type="file"]:focus {
+    border-style: solid;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(129, 199, 132, 0.1) 100%);
+}
+
+/* Title styling */
+.product-form h2,
+.product-form h3 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(27, 94, 32, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.product-form h2::after,
+.product-form h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 2px;
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 768px) {
+    .product-form {
+        width: min(95%, 600px);
+        margin: 30px auto 80px auto;
+        padding: 32px 24px;
+    }
+
+    .product-form h2,
+    .product-form h3 {
+        font-size: 2rem;
+        margin-bottom: 28px;
+    }
+
+    .product-form input,
+    .product-form select,
+    .product-form textarea {
+        padding: 14px 18px;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    .product-form button {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+        margin: 18px 0 10px 0;
+    }
+
+    .product-form img {
+        max-width: 120px;
+        margin: 14px 0;
+    }
+
+    .product-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .product-form label {
+        font-size: 1rem;
+        margin: 14px 0 6px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-form {
+        width: 95%;
+        margin: 20px auto 60px auto;
+        padding: 24px 16px;
+    }
+
+    .product-form h2,
+    .product-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 24px;
+    }
+
+    .product-form input,
+    .product-form select,
+    .product-form textarea {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        margin: 8px 0;
+    }
+
+    .product-form button {
+        padding: 14px 18px;
+        font-size: 1rem;
+        margin: 16px 0 8px 0;
+    }
+
+    .product-form img {
+        max-width: 100px;
+        margin: 12px 0;
+    }
+
+    .product-form label {
+        font-size: 0.95rem;
+        margin: 12px 0 6px 0;
+    }
+
+    .product-form textarea {
+        min-height: 100px;
+    }
 }
