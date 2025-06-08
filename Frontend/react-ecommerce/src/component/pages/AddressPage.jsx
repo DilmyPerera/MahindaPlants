@@ -33,4 +33,12 @@ const AddressPage = () => {
             setError(error.response?.data?.message || error.message || "unable to fetch user information")
         }
     };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setAddress((prevAddress) => ({
+            ...prevAddress,
+            [name]: value
+        }))
+    }
 }
