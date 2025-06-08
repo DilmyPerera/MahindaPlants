@@ -54,7 +54,12 @@ const AddressPage = () => {
 
     return (
         <div>
+            <h2>{location.pathname === '/edit-address' ? 'Edit Address' : "Add Addresss"}</h2>
+            {error && <p className="error-message">{error}</p>}
 
+            <form onSubmit={handSubmit}>
+
+            </form>
         </div>
     );
 }
