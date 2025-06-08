@@ -26,4 +26,7 @@ const ProfilePage = () => {
     }
 
     const orderItemList = userInfo.orderItemList || [];
+
+    const totalPages = Math.ceil(orderItemList.length / itemsPerPage);
+
 }
