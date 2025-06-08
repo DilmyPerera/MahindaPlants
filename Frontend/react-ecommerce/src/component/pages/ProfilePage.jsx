@@ -24,4 +24,6 @@ const ProfilePage = () => {
             setError(error.response?.data?.message || error.message || 'Unable to fetch user info');
         }
     }
+
+    const orderItemList = userInfo.orderItemList || [];
 }
