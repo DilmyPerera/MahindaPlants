@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ApiService from "../../service/ApiService";
 
 const EditCategory = () => {
 
@@ -12,7 +13,18 @@ const EditCategory = () => {
         fetchCategory(categoryId);
     }, [categoryId])
 
+    const fetchCategory = async () => {
+        try {
+            const response = await ApiService.getCategoryById(categoryId);
+            setName(response.category.name);
 
+        } catch (error) {
+            setMessage(error.response?.data?.message || error.message || "Failed to get a category by id")
+            setTimeout(() => {
+                setMessage('');
+            }, 3000)
+        }
+    }
 }
 
 export default EditCategory;
