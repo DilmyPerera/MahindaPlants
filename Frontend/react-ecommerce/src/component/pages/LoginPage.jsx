@@ -1,17 +1,19 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
-import '../../style/Registration.css';
+import '../../style/Registration.css'
+
 
 const LoginPage = () => {
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
 
     const [message, setMessage] = useState(null);
-
     const navigate = useNavigate();
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
