@@ -29,4 +29,8 @@ const ProfilePage = () => {
 
     const totalPages = Math.ceil(orderItemList.length / itemsPerPage);
 
+    const paginatedOrders = orderItemList.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
 }
