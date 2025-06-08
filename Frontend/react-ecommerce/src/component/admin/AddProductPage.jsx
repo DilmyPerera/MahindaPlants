@@ -16,6 +16,10 @@ const AddProductPage = () => {
     useEffect(() => {
         ApiService.getAllCategory().then((res) => setCategories(res.categoryList));
     }, [])
+
+    const handleImage = (e) => {
+        setImage(e.target.files[0])
+    }
 }
 
 export default AddProductPage;
