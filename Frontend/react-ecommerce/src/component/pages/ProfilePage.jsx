@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
@@ -9,4 +9,8 @@ const ProfilePage = () => {
     const itemsPerPage = 5;
     const navigate = useNavigate();
 
+    useEffect(() => {
+
+        fetchUserInfo();
+    }, []);
 }
