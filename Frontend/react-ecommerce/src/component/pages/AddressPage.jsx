@@ -66,6 +66,14 @@ const AddressPage = () => {
                         onChange={handleChange}
                         required />
                 </label>
+                <label>
+                    City:
+                    <input type="text"
+                        name="city"
+                        value={address.city}
+                        onChange={handleChange}
+                        required />
+                </label>
             </form>
         </div>
     );
