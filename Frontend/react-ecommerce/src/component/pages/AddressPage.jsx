@@ -54,7 +54,7 @@ const AddressPage = () => {
     }
 
     return (
-        <div>
+        <div className="address-page">
             <h2>{location.pathname === '/edit-address' ? 'Edit Address' : "Add Addresss"}</h2>
             {error && <p className="error-message">{error}</p>}
 
@@ -88,7 +88,7 @@ const AddressPage = () => {
                 <label>
                     Zip Code:
                     <input type="text"
-                        name="zipcode"
+                        name="zipCode"
                         value={address.zipCode}
                         onChange={handleChange}
                         required />
