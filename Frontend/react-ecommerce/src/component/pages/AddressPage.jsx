@@ -101,6 +101,9 @@ const AddressPage = () => {
                         onChange={handleChange}
                         required />
                 </label>
+
+                <button type="submit">{location.pathname === '/edit-address' ? 'Edit Address' : "Save Addresss"}</button>
+
             </form>
         </div>
     );
