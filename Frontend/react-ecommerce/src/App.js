@@ -13,6 +13,8 @@ import RegisterPage from './component/pages/RegisterPage';
 import LoginPage from './component/pages/LoginPage';
 import ProfilePage from './component/pages/ProfilePage';
 import AddressPage from './component/pages/AddressPage';
+import AdminPage from './component/admin/AdminPage';
+import AdminCategoryPage from './component/admin/AdminCategoryPage';
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
           <Route path='/profile' element={<ProtectedRoute element={<ProfilePage />} />} />
           <Route path='/add-address' element={<ProtectedRoute element={<AddressPage />} />} />
           <Route path='/edit-address' element={<ProtectedRoute element={<AddressPage />} />} />
+
+          <Route path='/admin' element={<AdminRoute element={<AdminPage />} />} />
+          <Route path='/admin/categories' element={<AdminRoute element={<AdminCategoryPage />} />} />
 
 
         </Routes>
