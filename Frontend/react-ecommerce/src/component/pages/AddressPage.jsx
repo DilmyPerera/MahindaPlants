@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const AddressPage = () => {
@@ -14,4 +14,11 @@ const AddressPage = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+
+        if (location.pathname === '/edit-address') {
+            fetchUserInfo();
+        }
+    }, [location.pathname]);
 }
