@@ -148,6 +148,12 @@ export default class ApiService {
         return response.data;
     }
 
+    static async saveAddress(body) {
+        const response = await axios.post(`${this.BASE_URL}/address/save`, body, {
+            headers: this.getHeader()
+        })
+        return response.data;
+    }
 
     static async updateOrderitemStatus(orderItemId, status) {
         const response = await axios.put(`${this.BASE_URL}/order/update-item-status/${orderItemId}`, {}, {
