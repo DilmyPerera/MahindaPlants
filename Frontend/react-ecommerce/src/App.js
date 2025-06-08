@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ProtectedRoute, AdminRoute } from './service/Guard';
 import { CartProvider } from './component/context/CartContext';
 import Navbar from './component/common/Navbar';
 import Footer from './component/common/footer';
