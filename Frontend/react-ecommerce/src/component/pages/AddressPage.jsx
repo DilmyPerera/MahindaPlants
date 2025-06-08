@@ -58,7 +58,14 @@ const AddressPage = () => {
             {error && <p className="error-message">{error}</p>}
 
             <form onSubmit={handSubmit}>
-
+                <label>
+                    Street:
+                    <input type="text"
+                        name="street"
+                        value={address.street}
+                        onChange={handleChange}
+                        required />
+                </label>
             </form>
         </div>
     );
