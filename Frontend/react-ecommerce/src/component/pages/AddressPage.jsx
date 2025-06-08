@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
+import '../../style/AddressPage.css';
 
 const AddressPage = () => {
 
