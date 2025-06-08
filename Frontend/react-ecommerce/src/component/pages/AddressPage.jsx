@@ -41,4 +41,14 @@ const AddressPage = () => {
             [name]: value
         }))
     }
+
+    const handSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await ApiService.saveAddress(address);
+            navigate("/profile")
+        } catch (error) {
+            setError(error.response?.data?.message || error.message || "Failed to save/update address")
+        }
+    }
 }
