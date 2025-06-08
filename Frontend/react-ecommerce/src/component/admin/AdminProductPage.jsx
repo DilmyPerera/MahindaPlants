@@ -41,6 +41,32 @@ const AdminProductPage = () => {
         }
     }
 
+    return (
+        <div className="admin-product-list">
+            {error ? (
+                <p className="error-message">{error}</p>
+            ) : (
+                <div>
+                    <h2>Products</h2>
+                    <button className="product-btn" onClick={() => { navigate('/admin/add-product'); }}>Add product</button>
+                    <ul>
+                        {products.map((product) => (
+                            <li key={product.id}>
+                                <span>{product.name}</span>
+                                <button className="product-btn" onClick={() => handleEdit(product.id)}>Edit</button>
+                                <button className="product-btn-delete" onClick={() => handleDelete(product.id)}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={(page) => setCurrentPage(page)} />
+                </div>
+            )}
+        </div>
+    )
+
 }
 
 export default AdminProductPage;
