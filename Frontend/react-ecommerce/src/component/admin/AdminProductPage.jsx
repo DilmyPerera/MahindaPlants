@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
 
@@ -21,6 +21,12 @@ const AdminProductPage = () => {
 
         }
     }
+
+    useEffect(() => {
+        fetchProducts();
+    }, [currentPage]);
+
+
 
 }
 
