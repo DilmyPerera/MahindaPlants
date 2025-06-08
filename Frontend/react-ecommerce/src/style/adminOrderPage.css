@@ -1,0 +1,458 @@
+.admin-orders-page {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 254, 0.95) 100%);
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 16px 48px rgba(46, 125, 50, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.admin-orders-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a, #81c784);
+    border-radius: 20px 20px 0 0;
+}
+
+.admin-orders-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(76, 175, 80, 0.03) 0%,
+            rgba(129, 199, 132, 0.03) 50%,
+            rgba(76, 175, 80, 0.03) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.admin-orders-page h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(27, 94, 32, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.admin-orders-page h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 2px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(129, 199, 132, 0.05) 100%);
+    border: 2px solid rgba(76, 175, 80, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(76, 175, 80, 0.08);
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4caf50, #66bb6a);
+    border-radius: 16px 16px 0 0;
+}
+
+.filter-container select {
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid rgba(46, 125, 50, 0.15);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 254, 0.9) 100%);
+    color: #37474f;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08);
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234caf50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+    min-width: 150px;
+}
+
+.filter-container select:focus {
+    border-color: #4caf50;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(129, 199, 132, 0.05) 100%);
+    box-shadow:
+        0 4px 12px rgba(46, 125, 50, 0.12),
+        0 0 0 3px rgba(76, 175, 80, 0.15);
+    transform: translateY(-1px);
+}
+
+.filter-container select:hover {
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+}
+
+.statusFilter,
+.searchStatus {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.statusFilter label,
+.searchStatus label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2e7d32;
+    letter-spacing: 0.3px;
+}
+
+.searchStatus {
+    margin-left: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 254, 0.9) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(46, 125, 50, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+.orders-table th,
+.orders-table td {
+    border: none;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.orders-table th {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.orders-table th:first-child {
+    border-radius: 16px 0 0 0;
+}
+
+.orders-table th:last-child {
+    border-radius: 0 16px 0 0;
+}
+
+.orders-table tr {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.orders-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #4caf50, #66bb6a);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.orders-table tr:hover {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(129, 199, 132, 0.08) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(46, 125, 50, 0.1);
+}
+
+.orders-table tbody tr:hover::before {
+    opacity: 1;
+}
+
+.orders-table tr:nth-child(even) {
+    background: linear-gradient(135deg, rgba(248, 255, 254, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.orders-table tr:nth-child(even):hover {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(129, 199, 132, 0.08) 100%);
+}
+
+.orders-table td {
+    color: #37474f;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.orders-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 16px;
+}
+
+.orders-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 16px 0;
+}
+
+.error-message {
+    color: #c62828;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(229, 57, 53, 0.1));
+    border: 2px solid rgba(244, 67, 54, 0.2);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 16px rgba(244, 67, 54, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.error-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f44336, #e53935);
+    border-radius: 12px 12px 0 0;
+}
+
+tbody button {
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    border-radius: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-family: inherit;
+    min-width: 80px;
+}
+
+tbody button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.4s;
+}
+
+tbody button:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+}
+
+tbody button:hover::before {
+    left: 100%;
+}
+
+tbody button:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+tbody button:focus {
+    outline: none;
+    box-shadow:
+        0 6px 16px rgba(46, 125, 50, 0.35),
+        0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 160, 0, 0.15));
+    color: #e65100;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.status-processing {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.15), rgba(30, 136, 229, 0.15));
+    color: #1565c0;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.status-completed {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(56, 142, 60, 0.15));
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status-cancelled {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.15), rgba(229, 57, 53, 0.15));
+    color: #c62828;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 992px) {
+    .admin-orders-page {
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 32px 24px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .searchStatus {
+        margin-left: 0;
+    }
+
+    .orders-table {
+        font-size: 0.9rem;
+    }
+
+    .orders-table th,
+    .orders-table td {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-orders-page {
+        margin: 20px auto;
+        padding: 24px 16px;
+        overflow-x: auto;
+    }
+
+    .admin-orders-page h2 {
+        font-size: 2.2rem;
+        margin-bottom: 24px;
+    }
+
+    .filter-container {
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+
+    .filter-container select {
+        min-width: 120px;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .orders-table {
+        margin-bottom: 24px;
+        border-radius: 12px;
+    }
+
+    .orders-table th,
+    .orders-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    tbody button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        min-width: 70px;
+    }
+
+    .statusFilter label,
+    .searchStatus label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-orders-page {
+        margin: 10px;
+        padding: 20px 12px;
+    }
+
+    .admin-orders-page h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .filter-container {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .orders-table th,
+    .orders-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    tbody button {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        min-width: 60px;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+}
