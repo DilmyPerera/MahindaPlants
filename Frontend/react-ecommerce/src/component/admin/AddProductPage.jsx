@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiService from "../../service/ApiService";
+import '../../style/AddProductPage.css';
 
 const AddProductPage = () => {
     const [image, setImage] = useState(null);
