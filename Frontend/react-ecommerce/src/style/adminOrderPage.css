@@ -191,7 +191,6 @@
 }
 
 .orders-table tbody tr::before {
-    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -224,6 +223,7 @@
     color: #37474f;
     font-size: 0.95rem;
     line-height: 1.4;
+    text-align: center;
 }
 
 .orders-table tbody tr:last-child td:first-child {
