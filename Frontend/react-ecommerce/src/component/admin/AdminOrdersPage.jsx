@@ -123,7 +123,7 @@ const AdminOrdersPage = () => {
                             <td>{order.id}</td>
                             <td>{order.user.name}</td>
                             <td>{order.status}</td>
-                            <td>${order.price.toFixed(2)}</td>
+                            <td>Rs. {order.price.toFixed(2)}</td>
                             <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                             <td>
                                 <button onClick={() => handleOrderDetails(order.id)}>Details</button>
